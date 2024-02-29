@@ -40,11 +40,37 @@ header .logo:hover {
 header nav ul li {
     position: relative;
     float: left;
-    transition: .5s; 
 }
 
-header nav ul li:hover {
-    transform: scale(1.2);
+nav ul li a {
+    color: #00bfff;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav ul li a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px; 
+    background-color: black; 
+    transition: width 0.5s; 
+}
+
+nav ul li a:hover:after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 3px; 
+    background-color: red; 
+    transition: width 0.5s;  
 }
 
 header nav ul li a {
@@ -64,7 +90,6 @@ nav ul li ul {
 
 nav ul li ul li {
     width: 100%;
-    border: 1px solid rgba(0,0,0,.1);
 }
 
 nav ul li ul li ul {
@@ -75,4 +100,40 @@ nav ul li ul li ul {
 nav ul li:hover > ul {
     display: initial;
     transition: .5s; 
+}
+
+.the-search-field:after {content:""; clear:both; display:table}
+.the-search-field form {
+  width: auto;
+  float: right;
+  margin-right: -30px;
+}
+.the-search-field input {
+  width: 250px;
+  height: 42px;
+  padding-left: 15px;
+  border-radius: 42px;
+  border: 2px solid #324b4e;
+  background: white;
+  outline: none;
+  position: relative;
+  transition: .3s linear;
+}
+.the-search-field input:focus {
+  width: 300px;
+}
+.the-search-field button {
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 4px;
+  right: 160px;
+}
+
+.the-search-field button:before{
+  content: "\f002";
+  font-family: FontAwesome;
+  color: #324b4e;
 }
